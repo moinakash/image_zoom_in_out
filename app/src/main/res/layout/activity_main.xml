@@ -5,18 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:orientation="horizontal"
     android:background="@color/colorAccent">
 
-    <ImageView
-        android:id="@+id/idClick"
-        android:background="@drawable/ic_launcher_foreground"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
 
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+
+        android:id="@+id/idClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoFlipBack="false"
+
+        app:flipDuration="3000"
+        app:flipEnabled="true"
+        app:flipFrom="front"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Layout Goes Here -->
+        <ImageView
+
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/ic_launcher_foreground"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Front Layout Goes Here -->
+        <ImageView
+
+
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
 
 
 

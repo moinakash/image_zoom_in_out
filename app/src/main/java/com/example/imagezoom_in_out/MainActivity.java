@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.wajahatkarim3.easyflipview.EasyFlipView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,15 +18,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ImageView imageView = findViewById(R.id.idClick);
+        final EasyFlipView imageView = (EasyFlipView) findViewById(R.id.idClick);
 
         final Animation animation = AnimationUtils.loadAnimation(MainActivity.this,R.anim.anim);
         final Animation animation2 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.anim2);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+    /*    imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
+
+
+
+            }
+        });*/
+
+
+        imageView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
+            @Override
+            public void onViewFlipCompleted(EasyFlipView flipView, EasyFlipView.FlipState newCurrentSide)
+            {
                 imageView.startAnimation(animation);
 
                 final Handler handler = new Handler();
@@ -39,13 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void thread() {
-
-
-
-
 
     }
+
+
 }
