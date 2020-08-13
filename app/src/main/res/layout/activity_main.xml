@@ -10,28 +10,63 @@
     android:background="#FFC107">
 
     <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:elevation="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/left"
+            />
+
+        <Button
+            android:elevation="5dp"
+            android:layout_marginRight="30dp"
+            android:rotationY="-180"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/left"
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+
+
         <ViewFlipper
             android:id="@+id/view_flipper_head"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:gravity="right"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
                     android:text="MOIN"
-                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textSize="100dp"
-                    android:textColor="@color/white"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -41,61 +76,58 @@
                 android:layout_gravity="top">
 
 
-
                 <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:text="BAYZID"
-                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textSize="100dp"
-                    android:textColor="@color/white"/>
+                    android:textStyle="bold" />
             </LinearLayout>
-
-
 
 
         </ViewFlipper>
 
         <ViewFlipper
-            android:layout_below="@id/view_flipper_head"
             android:id="@+id/view_flipper_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:layout_below="@id/view_flipper_head">
+
             <LinearLayout
-                android:translationY="-25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top">
+                android:layout_gravity="top"
+                android:translationY="-25dp">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:gravity="right"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
                     android:text="AKASH"
-                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textSize="100dp"
-                    android:textColor="@color/white"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:translationY="-25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top">
-
+                android:layout_gravity="top"
+                android:translationY="-25dp">
 
 
                 <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:text="ISLAM"
-                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textSize="100dp"
-                    android:textColor="@color/white"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -127,13 +159,14 @@
         <ViewFlipper
             android:id="@+id/view_flipper"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_gravity="bottom"
                 android:background="#2196F3" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
@@ -166,9 +199,9 @@
         </ViewFlipper>
 
 
-
-
     </RelativeLayout>
+
+
 
     <ImageView
         android:layout_marginTop="80dp"
@@ -219,6 +252,9 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
             </LinearLayout>
 
             <!-- Front Layout Goes Here -->
@@ -245,7 +281,17 @@
         </com.wajahatkarim3.easyflipview.EasyFlipView>
 
 
-
+    <Button
+       android:id="@+id/idDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="details"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="60dp"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

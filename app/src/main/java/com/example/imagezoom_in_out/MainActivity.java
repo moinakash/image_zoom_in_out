@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -15,10 +16,13 @@ import com.wajahatkarim3.easyflipview.EasyFlipView;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView shadow ;
-    private ViewFlipper viewFlipper, viewFlipper2,viewFlipper3;
-    int x =0;
 
-    int y=0;
+    Button delete;
+    private ViewFlipper viewFlipper, viewFlipper2,viewFlipper3;
+    int x =0,y=0,z=0;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         final EasyFlipView imageView = (EasyFlipView) findViewById(R.id.idClick);
         shadow = (ImageView) findViewById(R.id.idShadow);
+        delete = (Button) findViewById(R.id.idDetails);
         viewFlipper = findViewById(R.id.view_flipper);
         viewFlipper2 = findViewById(R.id.view_flipper_head);
         viewFlipper3 = findViewById(R.id.view_flipper_body);
@@ -37,6 +42,30 @@ public class MainActivity extends AppCompatActivity {
         final Animation animation3 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.anim3);
         final Animation animation4 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.anim4);
         final Animation Translate = AnimationUtils.loadAnimation(MainActivity.this,R.anim.translate);
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(z==0){
+
+                    imageView.setClickable(false);
+                   // imageView.setFlipEnabled(false);
+                    imageView.animate().translationX(-500).setDuration(1000);
+                    shadow.animate().translationX(-500).setDuration(1000);
+                    z=1;
+                }else if(z==1){
+                    imageView.setClickable(true);
+                    imageView.animate().translationX(0).setDuration(1000);
+                    shadow.animate().translationX(0).setDuration(1000);
+                    z=0;
+                }
+
+
+
+            }
+        });
+
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,60 +94,18 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
+
                         imageView.startAnimation(animation2);
                         shadow.startAnimation(animation3);
                     }
                 }, 999);
 
 
-              /*  final Handler handler2 = new Handler();
-                handler2.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        imageView.startAnimation(Translate);
-                        shadow.startAnimation(Translate);
-
-                        final Handler handler3 = new Handler();
-                        handler3.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-
-
-                                shadow.setTranslationX(-500);
-                                imageView.setTranslationX(-500);
-                            }
-                        }, 1900);
-
-                    }
-                }, 2000);
-
-*/
-
-
-
             }
         });
 
 
- /*       imageView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
-            @Override
-            public void onViewFlipCompleted(EasyFlipView flipView, EasyFlipView.FlipState newCurrentSide)
-            {
-                imageView.startAnimation(animation);
 
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        imageView.startAnimation(animation2);
-
-                    }
-                }, 1999);
-
-            }
-        });*/
 
     }
 
