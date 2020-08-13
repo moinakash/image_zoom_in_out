@@ -6,52 +6,244 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="horizontal"
-    android:background="@color/colorAccent">
 
+    android:background="#FFC107">
 
-    <com.wajahatkarim3.easyflipview.EasyFlipView
-
-        android:id="@+id/idClick"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:autoFlipBack="false"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-        app:flipDuration="3000"
-        app:flipEnabled="true"
-        app:flipFrom="front"
-        app:flipOnTouch="true"
-        app:flipType="horizontal"
+        <ViewFlipper
+            android:id="@+id/view_flipper_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+                <TextView
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="MOIN"
+                    android:textStyle="bold"
+                    android:textSize="100dp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="BAYZID"
+                    android:textStyle="bold"
+                    android:textSize="100dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+
+
+
+        </ViewFlipper>
+
+        <ViewFlipper
+            android:layout_below="@id/view_flipper_head"
+            android:id="@+id/view_flipper_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:translationY="-25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+                <TextView
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="AKASH"
+                    android:textStyle="bold"
+                    android:textSize="100dp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:translationY="-25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="ISLAM"
+                    android:textStyle="bold"
+                    android:textSize="100dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+
+            <!--        <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView1"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView2"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView3"
+                            android:textSize="20sp" />
+                    </LinearLayout>-->
+
+        </ViewFlipper>
+
+
+        <ViewFlipper
+            android:id="@+id/view_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="bottom"
+                android:background="#2196F3" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="bottom"
+                android:background="#3F51B5" />
+
+
+            <!--        <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView1"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView2"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView3"
+                            android:textSize="20sp" />
+                    </LinearLayout>-->
+
+        </ViewFlipper>
+
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:id="@+id/idShadow"
+        android:layout_width="320dp"
+        android:layout_height="520dp"
+        android:background="@drawable/mbl_shadow_3"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <!-- Back Layout Goes Here -->
-        <ImageView
+        <com.wajahatkarim3.easyflipview.EasyFlipView
 
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:background="@drawable/ic_launcher_foreground"
-            android:layout_gravity="center"
+            android:id="@+id/idClick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:autoFlipBack="false"
+            app:flipDuration="1000"
+            app:flipEnabled="true"
+            app:flipFrom="front"
+            app:flipOnTouch="false"
+            app:flipType="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Front Layout Goes Here -->
-        <ImageView
+            <!-- Back Layout Goes Here -->
 
+            <LinearLayout
 
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:background="@drawable/ic_launcher_background"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-    </com.wajahatkarim3.easyflipview.EasyFlipView>
+                <ImageView
+                    android:layout_marginTop="50dp"
+                    android:layout_width="200dp"
+                    android:layout_height="350dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/mbl_back"
+                    android:rotationY="-180"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <!-- Front Layout Goes Here -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+
+                    android:layout_marginTop="50dp"
+                    android:layout_width="200dp"
+                    android:layout_height="350dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/mbl_front"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
 
 
 
