@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
                     ButtonRL.setVisibility(View.GONE);
 
+                    viewFlipper.animate().translationY(-300).setDuration(1000);
+
                     imageView.setClickable(false);
                    // imageView.setFlipEnabled(false);
                     imageView.animate().translationX(-500).setDuration(1000);
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }, 950);
 
-
+                    viewFlipper.animate().translationY(0).setDuration(1000);
                     imageView.setClickable(true);
                     imageView.animate().translationX(0).setDuration(1000);
                     shadow.animate().translationX(0).setDuration(1000);
