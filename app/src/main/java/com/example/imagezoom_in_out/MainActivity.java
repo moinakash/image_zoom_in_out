@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
 import com.wajahatkarim3.easyflipview.EasyFlipView;
@@ -16,7 +17,7 @@ import com.wajahatkarim3.easyflipview.EasyFlipView;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView shadow ;
-
+    private RelativeLayout ButtonRL;
     Button delete;
     private ViewFlipper viewFlipper, viewFlipper2,viewFlipper3;
     int x =0,y=0,z=0;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper = findViewById(R.id.view_flipper);
         viewFlipper2 = findViewById(R.id.view_flipper_head);
         viewFlipper3 = findViewById(R.id.view_flipper_body);
+        ButtonRL = (RelativeLayout) findViewById(R.id.idButton_RL);
 
         final Animation animation = AnimationUtils.loadAnimation(MainActivity.this,R.anim.anim);
         final Animation animation2 = AnimationUtils.loadAnimation(MainActivity.this,R.anim.anim2);
@@ -49,12 +51,25 @@ public class MainActivity extends AppCompatActivity {
 
                 if(z==0){
 
+                    ButtonRL.setVisibility(View.GONE);
+
                     imageView.setClickable(false);
                    // imageView.setFlipEnabled(false);
                     imageView.animate().translationX(-500).setDuration(1000);
                     shadow.animate().translationX(-500).setDuration(1000);
                     z=1;
                 }else if(z==1){
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ButtonRL.setVisibility(View.VISIBLE);
+                          //  ButtonRL.animate().alpha()
+                        }
+                    }, 950);
+
+
                     imageView.setClickable(true);
                     imageView.animate().translationX(0).setDuration(1000);
                     shadow.animate().translationX(0).setDuration(1000);
